@@ -4,6 +4,10 @@ class  Portal(val url: String, val publishAt: String) {
     fun showUrl() : String {
         return this.url
     }
+
+    fun saySomething() : String {
+        return "Oops main method called"
+    }
 }
 
 data class  User(val id: Int, val name: String, val age: Int)
@@ -142,15 +146,26 @@ fun main(args: Array<String>) {
     val func = timeConversion("minute")
     println(func(2))
 
+    // Extension
+    fun Portal.swap() {
+        println("[log]: ${this.url}")
+    }
 
+    fun Portal.saySomething() : String {
+        return "Oops extension method is called"
+    }
 
 
     val portal: Portal = Portal("www.tunji.com", "2334")
     // println(portal.url)
     //println(portal.showUrl())
+    // portal.swap()
+    // println(portal.saySomething())
 
     // data class
     val userOne = User(1, "Ade", age = 20)
+
+
 
     println(userOne.toString())
     // Try adding program arguments via Run/Debug configuration.
