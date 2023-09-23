@@ -112,7 +112,25 @@ fun main(args: Array<String>) {
     fun singleExp(x: Int, y: Int) = x + y
     // println(singleExp(y = 23, x = 28))
 
+    // assign lamba expression
+    val changeToUpper = {param: String -> param.uppercase()}
+    println(changeToUpper("Hello Lamba"))
+    // passing lambda expression
+    val numbers = listOf(1, -2, 3, -4, 5, -6)
+    val positiveNum = numbers.filter { x -> x > 0 }
+    println(positiveNum)
+    println(list.map { x -> x.uppercase() })
 
+    // Returning a lambda
+    fun timeConversion(time: String) : (Int) -> Int = when(time) {
+        "minute" -> {value -> value * 60 * 60}
+        "seconds" -> {value -> value * 60 * 60 }
+        "milliseconds" -> {value -> value * 60 * 60 * 1000}
+        else -> {value -> value}
+    }
+
+    val func = timeConversion("minute")
+    println(func(2))
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
