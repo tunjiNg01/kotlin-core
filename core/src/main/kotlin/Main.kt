@@ -1,3 +1,13 @@
+import java.util.Date
+
+class  Portal(val url: String, val publishAt: String) {
+    fun showUrl() : String {
+        return this.url
+    }
+}
+
+data class  User(val id: Int, val name: String, val age: Int)
+
 fun main(args: Array<String>) {
     // constant val immutable
     // variable var mutable
@@ -131,6 +141,18 @@ fun main(args: Array<String>) {
 
     val func = timeConversion("minute")
     println(func(2))
+
+
+
+
+    val portal: Portal = Portal("www.tunji.com", "2334")
+    // println(portal.url)
+    //println(portal.showUrl())
+
+    // data class
+    val userOne = User(1, "Ade", age = 20)
+
+    println(userOne.toString())
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
