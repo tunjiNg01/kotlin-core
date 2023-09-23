@@ -69,6 +69,41 @@ The characteristics of a class can be declared within the braces () on we create
 Just like the function, class headers can have a default.
 
 ## Data
-The data class is declared with the data keyword, they can be used to store data, and just like in Java they come with other methods and functions
+The data class is declared with the data keyword, they can be used to store data, and just like in Java, they come with other methods and functions.
 
+# Nullable Types
+Kotlin supports nullable this allowed the declared type to have null as a possible value, to make a type nullable we add ? in front of the type i.e. String?
+### Use safe calls﻿
+In order to avoid null exception errors use a safe call operator ?. 
+### Use Elvis operator
+Use the Elvis operator to provide an optional value if a variable happens to be null.
+# Extension
+This allows us to extend the function of certain classes we can use this to implement the decorator class
+If a class has a member function, and an extension function is defined that has the same receiver type, the same name, and is applicable to given arguments, the member always wins.
+### Nullable receiver﻿
+Note that extensions can be defined with a nullable receiver type. These extensions can be called on an object variable even if its value is null.
+### Extension properties﻿?
 
+### Scope of extensions
+In most cases, you define extensions on the top level, directly under packages:
+
+```java
+package org.example.declarations
+
+fun List<String>.getLongestString() { /*...*/}
+
+```
+To use an extension outside its declaring package, import it at the call site:
+
+```java
+package org.example.usage
+
+import org.example.declarations.getLongestString
+
+fun main() {
+    val list = listOf("red", "green", "blue")
+    list.getLongestString()
+}
+```
+### Declaring extensions as members﻿
+You can declare extensions for one class inside another class. Inside such an extension, there are multiple implicit receivers - objects whose members can be accessed without a qualifier. An instance of a class in which the extension is declared is called a dispatch receiver, and an instance of the receiver type of the extension method is called an extension receiver.
