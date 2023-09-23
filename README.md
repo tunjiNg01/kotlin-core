@@ -23,3 +23,43 @@ You can also do the same with Char ranges:
 - 'a'..'d' is equivalent to 'a', 'b', 'c', 'd'
 
 - 'z' downTo 's' step 2 is equivalent to 'z', 'x', 'v', 't'
+
+  # Function
+  You can declare your own functions in Kotlin using the fun keyword.
+
+In Kotlin:
+
+function parameters are written within parentheses ().
+
+- each parameter must have a type, and multiple parameters must be separated by commas ,.
+
+- the return type is written after the function's parentheses (), separated by a colon :.
+
+- the body of a function is written within curly braces {}.
+
+- the return keyword is used to exit or return something from a function.
+
+  # Lambda expressions
+  Kotlin allows you to write even more concise code for functions by using lambda expressions.
+
+  Lambda expressions can be used in a number of ways. You can:
+
+- assign a lambda to a variable that you can then invoke later
+
+- pass a lambda expression as a parameter to another function
+
+- return a lambda expression from a function
+
+- invoke a lambda expression on its own
+
+Before you can return a lambda expression from a function, you first need to understand function types.
+You have already learned about basic types but functions themselves also have a type. Kotlin's type inference can infer a function's type from the parameter type. But there may be times when you need to specify the function type explicitly. The compiler needs the function type so that it knows what is and isn't allowed for that function.
+
+### Returning a lambda expression
+A function can return a lambda expression but we need to indicate the return type like this: (Int) -> Int. this implies that the function will return a function that takes in an Integer and returns an integer.
+A lambda expression can be invoke using the () after the curly braces.
+
+### Trailing lambda
+If the lambda expression is the only parameter we can drop the the braces for curly braces if the lambda expression is the last parameter the lambda can be outside the braces
+
+
