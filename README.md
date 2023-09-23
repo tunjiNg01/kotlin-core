@@ -57,9 +57,18 @@ You have already learned about basic types but functions themselves also have a 
 
 ### Returning a lambda expression
 A function can return a lambda expression but we need to indicate the return type like this: (Int) -> Int. this implies that the function will return a function that takes in an Integer and returns an integer.
-A lambda expression can be invoke using the () after the curly braces.
+A lambda expression can be invoked using the () after the curly braces.
 
 ### Trailing lambda
 If the lambda expression is the only parameter we can drop the the braces for curly braces if the lambda expression is the last parameter the lambda can be outside the braces
+
+# Classes
+Classes are declared in Kotlin using the keyword class followed by the class name
+## properties
+The characteristics of a class can be declared within the braces () on we create the instance of this class we have to provide those properties provided by the class, the content within the parenthesis of the class is called the class headers.
+Just like the function, class headers can have a default.
+
+## Data
+The data class is declared with the data keyword, they can be used to store data, and just like in Java they come with other methods and functions
 
 
