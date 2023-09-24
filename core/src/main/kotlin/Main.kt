@@ -109,7 +109,7 @@ fun main(args: Array<String>) {
         println("Good morning Tunji")
     }
 
-    greet()
+   // greet()
     fun sum(x: Int, y: Int) : Int {
         println("[$x] is: ...")
        return  (x + y)
@@ -121,19 +121,19 @@ fun main(args: Array<String>) {
         println("[$prefix] $message")
     }
 
-    printMessageWithPrefix(prefix = "Log", message = "Logged in to account" )
+   // printMessageWithPrefix(prefix = "Log", message = "Logged in to account" )
    // single expression function
     fun singleExp(x: Int, y: Int) = x + y
     // println(singleExp(y = 23, x = 28))
 
     // assign lamba expression
     val changeToUpper = {param: String -> param.uppercase()}
-    println(changeToUpper("Hello Lamba"))
+   // println(changeToUpper("Hello Lamba"))
     // passing lambda expression
     val numbers = listOf(1, -2, 3, -4, 5, -6)
     val positiveNum = numbers.filter { x -> x > 0 }
-    println(positiveNum)
-    println(list.map { x -> x.uppercase() })
+   // println(positiveNum)
+   // println(list.map { x -> x.uppercase() })
 
     // Returning a lambda
     fun timeConversion(time: String) : (Int) -> Int = when(time) {
@@ -144,7 +144,7 @@ fun main(args: Array<String>) {
     }
 
     val func = timeConversion("minute")
-    println(func(2))
+    // println(func(2))
 
     // Extension
     fun Portal.swap() {
@@ -165,9 +165,15 @@ fun main(args: Array<String>) {
     // data class
     val userOne = User(1, "Ade", age = 20)
 
+    val  classConcept = ClassConcept(name = "Tunji Hammed", age = 23, address = "1123 drive park way")
+    val x = NewClassB(name = "Ade")
+    // println(x.draw())
+    val pro = ProtocolState.WAITING
+    println(pro.signal())
 
 
-    println(userOne.toString())
+
+    // println(userOne.toString())
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
