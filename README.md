@@ -68,8 +68,18 @@ Classes are declared in Kotlin using the keyword class followed by the class nam
 The characteristics of a class can be declared within the braces () on we create the instance of this class we have to provide those properties provided by the class, the content within the parenthesis of the class is called the class headers.
 Just like the function, class headers can have a default.
 
-## Data
+# Data
 The data class is declared with the data keyword, they can be used to store data, and just like in Java, they come with other methods and functions.
+## Properties declared in the class body
+The compiler only uses the properties defined inside the primary constructor for the automatically generated functions. To exclude a property from the generated implementations, declare it inside the class body:
+## Data classes and destructuring declarations
+Component functions generated for data classes make it possible to use them in destructuring declarations:
+```java
+val jane = User("Jane", 35)
+val (name, age) = jane
+println("$name, $age years of age")
+// Jane, 35 years of age
+```
 
 # Nullable Types
 Kotlin supports nullable this allowed the declared type to have null as a possible value, to make a type nullable we add ? in front of the type i.e. String?
@@ -89,17 +99,13 @@ In most cases, you define extensions on the top level, directly under packages:
 
 ```java
 package org.example.declarations
-
 fun List<String>.getLongestString() { /*...*/}
-
 ```
 To use an extension outside its declaring package, import it at the call site:
 
 ```java
 package org.example.usage
-
 import org.example.declarations.getLongestString
-
 fun main() {
     val list = listOf("red", "green", "blue")
     list.getLongestString()
@@ -107,3 +113,17 @@ fun main() {
 ```
 ### Declaring extensions as members﻿
 You can declare extensions for one class inside another class. Inside such an extension, there are multiple implicit receivers - objects whose members can be accessed without a qualifier. An instance of a class in which the extension is declared is called a dispatch receiver, and an instance of the receiver type of the extension method is called an extension receiver.
+
+# Functional (SAM) interfaces ??
+
+
+# Vissibility identify
+The visibility identifier allows us to control where class, method, and properties can be used, these are the visibility identifiers in Kotlin private, public, protected, and internal, When we override a method or property without indicating the visibility identifier it inherits the initial identifier.
+
+- private means that the member is visible inside this class only (including all its members).
+
+- protected means that the member has the same visibility as one marked as private, but that it is also visible in subclasses.
+
+- internal means that any client inside this module who sees the declaring class sees its internal members.
+
+- public means that any client who sees the declaring class sees its public members.
