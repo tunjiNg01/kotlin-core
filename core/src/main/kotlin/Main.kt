@@ -1,23 +1,23 @@
 import java.util.Date
 
-class  Portal(val url: String, val publishAt: String) {
-    fun showUrl() : String {
+class Portal(val url: String, val publishAt: String) {
+    fun showUrl(): String {
         return this.url
     }
 
-    fun saySomething() : String {
+    fun saySomething(): String {
         return "Oops main method called"
     }
 }
 
-data class  User(val id: Int, val name: String, val age: Int)
+data class User(val id: Int, val name: String, val age: Int)
 
 fun main(args: Array<String>) {
     // constant val immutable
     // variable var mutable
     var attendance: Int = 24
     attendance = 34
-   // println("The number of pupil in the class is: $attendance")
+    // println("The number of pupil in the class is: $attendance")
     //println("Hello World!")
 
     val d: Long = 100_000_000_000_000
@@ -29,7 +29,7 @@ fun main(args: Array<String>) {
     // Mutable List
     val mutableList: MutableList<String> = mutableListOf("Home", "Abroad", "UK")
     mutableList.add("Halloween")
-   // println(mutableList)
+    // println(mutableList)
 
     // println(list)
 
@@ -38,13 +38,13 @@ fun main(args: Array<String>) {
     // Mutable set with explicit type declaration
     val fruit: MutableSet<String> = mutableSetOf("apple", "banana", "cherry", "cherry")
     val findFruit = "apple" in fruit
-   // println(findFruit)
-  //  println(fruit)
+    // println(findFruit)
+    //  println(fruit)
 
 
     // Read-only map
     val readOnlyJuiceMenu = mapOf("apple" to 100, "kiwi" to 190, "orange" to 100)
-   // println(readOnlyJuiceMenu)
+    // println(readOnlyJuiceMenu)
     // {apple=100, kiwi=190, orange=100}
 
     // Mutable map with explicit type declaration
@@ -53,22 +53,23 @@ fun main(args: Array<String>) {
 
     juiceMenu.remove("orange")
     println(juiceMenu.containsKey("apple"))
-   // println(juiceMenu.keys)
-   // println(juiceMenu.values)
+    // println(juiceMenu.keys)
+    // println(juiceMenu.values)
 
-   // println("orange" in readOnlyJuiceMenu.keys)
+    // println("orange" in readOnlyJuiceMenu.keys)
 // true
-  //  println(200 in readOnlyJuiceMenu.values)
+    //  println(200 in readOnlyJuiceMenu.values)
 // false
 
     // Control flow in kotlin
 
     val name = "1"
 
-   val result = when(name) {
+    val result = when (name) {
         "Tunji" -> {
             println(name)
         }
+
         "1" -> println(1)
         else -> {
             println("unknown object")
@@ -87,15 +88,15 @@ fun main(args: Array<String>) {
         // Sets description to "hot" if no previous condition is satisfied
         else -> "hot"
     }
-  //  println(description)
-   // println("This map has ${readOnlyJuiceMenu.count()} key-value pairs")
+    //  println(description)
+    // println("This map has ${readOnlyJuiceMenu.count()} key-value pairs")
 
-    for (i in 5 downTo 1 step 2){
-     //   println(i)
+    for (i in 5 downTo 1 step 2) {
+        //   println(i)
     }
 
     for (j in 'a'..'d') {
-      //  println(j)
+        //  println(j)
     }
 
     var cakesEaten = 0
@@ -109,10 +110,10 @@ fun main(args: Array<String>) {
         println("Good morning Tunji")
     }
 
-   // greet()
-    fun sum(x: Int, y: Int) : Int {
+    // greet()
+    fun sum(x: Int, y: Int): Int {
         println("[$x] is: ...")
-       return  (x + y)
+        return (x + y)
     }
 
     // println(sum(23,45))
@@ -121,26 +122,26 @@ fun main(args: Array<String>) {
         println("[$prefix] $message")
     }
 
-   // printMessageWithPrefix(prefix = "Log", message = "Logged in to account" )
-   // single expression function
+    // printMessageWithPrefix(prefix = "Log", message = "Logged in to account" )
+    // single expression function
     fun singleExp(x: Int, y: Int) = x + y
     // println(singleExp(y = 23, x = 28))
 
     // assign lamba expression
-    val changeToUpper = {param: String -> param.uppercase()}
-   // println(changeToUpper("Hello Lamba"))
+    val changeToUpper = { param: String -> param.uppercase() }
+    // println(changeToUpper("Hello Lamba"))
     // passing lambda expression
     val numbers = listOf(1, -2, 3, -4, 5, -6)
     val positiveNum = numbers.filter { x -> x > 0 }
-   // println(positiveNum)
-   // println(list.map { x -> x.uppercase() })
+    // println(positiveNum)
+    // println(list.map { x -> x.uppercase() })
 
     // Returning a lambda
-    fun timeConversion(time: String) : (Int) -> Int = when(time) {
-        "minute" -> {value -> value * 60 * 60}
-        "seconds" -> {value -> value * 60 * 60 }
-        "milliseconds" -> {value -> value * 60 * 60 * 1000}
-        else -> {value -> value}
+    fun timeConversion(time: String): (Int) -> Int = when (time) {
+        "minute" -> { value -> value * 60 * 60 }
+        "seconds" -> { value -> value * 60 * 60 }
+        "milliseconds" -> { value -> value * 60 * 60 * 1000 }
+        else -> { value -> value }
     }
 
     val func = timeConversion("minute")
@@ -151,7 +152,7 @@ fun main(args: Array<String>) {
         println("[log]: ${this.url}")
     }
 
-    fun Portal.saySomething() : String {
+    fun Portal.saySomething(): String {
         return "Oops extension method is called"
     }
 
@@ -165,13 +166,14 @@ fun main(args: Array<String>) {
     // data class
     val userOne = User(1, "Ade", age = 20)
 
-    val  classConcept = ClassConcept(name = "Tunji Hammed", age = 23, address = "1123 drive park way")
+    val classConcept = ClassConcept(name = "Tunji Hammed", age = 23, address = "1123 drive park way")
     val x = NewClassB(name = "Ade")
     // println(x.draw())
     val pro = ProtocolState.WAITING
     println(pro.signal())
 
-
+    val asyn = AsyncProgramming()
+    asyn.add()
 
     // println(userOne.toString())
     // Try adding program arguments via Run/Debug configuration.
