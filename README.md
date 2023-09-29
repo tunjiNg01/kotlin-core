@@ -127,3 +127,27 @@ The visibility identifier allows us to control where class, method, and properti
 - internal means that any client inside this module who sees the declaring class sees its internal members.
 
 - public means that any client who sees the declaring class sees its public members.
+
+# Sealed class or interface
+when a class is declared as sealed it implies that all subclasses must be known at the compile time, such classes can not be subclassed outside such module or package.
+# nsted class
+```java
+class Outer {
+    private val bar: Int = 1
+    class Nested {
+        fun foo() = 2
+    }
+}
+
+val demo = Outer.Nested().foo() // == 2
+
+class Outer {
+    private val bar: Int = 1
+    inner class Inner {
+        fun foo() = bar
+    }
+}
+
+val demo = Outer().Inner().foo() // == 1
+```
+# inline class ?
